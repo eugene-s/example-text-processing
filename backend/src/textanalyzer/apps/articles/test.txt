@@ -1,0 +1,5 @@
+a popular idea in modern machine learning is to represent words by vectors
+these vectors capture hidden information about a language like word analogies or semantic
+it is also used to improve performance of text classifiers
+in this tutorial we show how to build these word vectors with the fasttext tool
+to download and install fasttext follow the first steps of the tutorial on text classification

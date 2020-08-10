@@ -1,0 +1,9 @@
+pip-tools
+python-decouple
+
+Django
+celery
+redis
+djangorestframework
+
+fasttext

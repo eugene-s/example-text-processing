@@ -1,2 +1,18 @@
 version: "3.7"
 
+services:
+  web: &srv-template
+    build: backend
+    image: ${DOCKER_REPO_URL:-localhost}/text-processing-backend:${TAG_VERSION:-local}
+    command: "gunicorn --bind 0.0.0.0:5000 wsgi:app"
+    ports:
+    - 5000:5000
+
+  celery-worker: *srv-template
+    command: "celery worker"
+
+  celery-beat: *srv-template
+    command: "celery beat"
+
+  redis:
+    image: redis:4-alpine
